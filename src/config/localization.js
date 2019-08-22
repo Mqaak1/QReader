@@ -4,16 +4,23 @@ const strings = new LocalizedStrings({
   en: {
     //Bottom navigation
     scanner: 'Scanner',
-    tasks: 'Tasks',
+    history: 'History',
     lookup: 'Lookup',
-    profile: 'Profile'
+    settings: 'Settings'
+  },
+  ua:{
+    //Bottom navigation
+    scanner: 'Cканувати',
+    history: 'Історія',
+    lookup: 'Lookup',
+    settings: 'Налаштування'
   },
   de: {
     //Bottom navigation
     scanner: 'Scanner',
-    tasks: 'Aufgaben',
+    history: 'Geschichte',
     lookup: 'Sieh nach oben',
-    profile: 'Profil'
+    settings: 'Einstellungen'
   }
 });
 

@@ -11,7 +11,7 @@ const Input = (props) => {
         {/* eslint-disable react/jsx-one-expression-per-line */}
         {title && <Text style={styles.common.inputTitle}>{title}{required && <Text style={{color: colors.red}}> *</Text>}</Text>}
         <TextInput {...props} style={[styles.common.input, {borderColor:inputColor}, inputStyle]} />
-        <Text style={{color:inputColor}}>{icon && <Icon style={{fontFamily:'rebolet-mobile', color:inputColor}}>{icon}</Icon>} {info}</Text>
+        <Text style={{color:inputColor}}>{icon && <Icon style={{color:inputColor}}>{icon}</Icon>} {info}</Text>
       </View>
     );
 }
