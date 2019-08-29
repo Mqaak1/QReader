@@ -7,12 +7,12 @@ import Header from "./Header";
 
 const Scene = (props) => {
     const { children, navigator, header, title, index } = props;
-    if(Platform.OS === 'android') StatusBar.setBackgroundColor(colors.blue, true)
+    if(Platform.OS === 'android') StatusBar.setBackgroundColor(colors.dark, true)
     return (
       <View style={styles.common.rootContainer}>
         <StatusBar backgroundColor='red' barStyle='light-content' />
         {header && <Header title={title} />}
-        <View {...props}>
+        <View style={{flex:1, backgroundColor:colors.black}} {...props}>
           {children}
         </View>
         {navigator && <Navigator index={index} />}

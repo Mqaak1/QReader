@@ -12,17 +12,12 @@ export const Shadow = Platform.select({
   }},  android: {elevation: 5}})
 
 export const colors = {   
-  blue:'#111f4d',
-  orange:'#fd5f00',
-  black:'#000000',
-  green:'#39b54a',
+  black:'rgb(7,5,4)',
+  dark:'rgb(20,18,17)',
+  grey:'rgb(92,94,96)',
+  white:'rgb(255,255,255)',
+  green:'rgb(42,158,99)',
   red:'#ed1c24',
-  white:'#ffffff',
-  gray_100:'#7f8fa4',
-  gray_50:'#bfc7d1',
-  gray_20:'#e5e9ed',
-  gray_10:'#f2f3f5',
-  gray_5:'#f8f9fa',
   translucent:'rgba(0,0,0,0.5)'
 };
 
@@ -35,7 +30,7 @@ export const common = StyleSheet.create({
     flex:1,
     alignItems:'center',
     justifyContent:'center',
-    backgroundColor:colors.blue
+    backgroundColor:colors.dark
   },
   headerContainer:{
     height: 45 + IOSpadding,
@@ -44,7 +39,7 @@ export const common = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     paddingHorizontal:15,
-    backgroundColor: colors.blue
+    backgroundColor: colors.dark
   },
   headerTitle:{
     fontSize:22,
@@ -55,7 +50,7 @@ export const common = StyleSheet.create({
     flexDirection:'row',
     justifyContent:'space-around',
     paddingVertical:5,
-    backgroundColor:colors.gray_5
+    backgroundColor:colors.dark
   },
   navigatorItem:{
     alignItems:'center',
@@ -67,14 +62,14 @@ export const common = StyleSheet.create({
     color:colors.white
   },
   inputTitle:{
-    color:colors.gray_100,
+    color:colors.dark,
     fontSize:16,
     fontWeight:'bold'
   },
   input:{
     padding:15,
     borderWidth:1,
-    borderColor:colors.gray_20,
+    borderColor:colors.dark,
     borderRadius:5
   },
   buttonContainer:{
@@ -105,4 +100,28 @@ export const common = StyleSheet.create({
   }
 });
 
-export default { common };
+
+export const scanner = StyleSheet.create({
+  permissionDialog:{
+    position:'absolute',
+    padding:15,
+    alignSelf:'center',
+    bottom:15,
+    borderRadius:15,
+    backgroundColor:colors.dark
+  },
+  permissionTitle:{
+    fontSize:18,
+    color:colors.white,
+    fontWeight:'bold',
+    textAlign:'center'
+  },
+  permissionDescription:{
+    fontSize:16,
+    color:colors.white,
+    fontWeight:'bold',
+    marginVertical:10
+  },
+});
+
+export default { common, scanner };

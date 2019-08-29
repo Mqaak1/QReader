@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-// import { ScrollView } from 'react-native';
+import { View } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import Permissions from 'react-native-permissions'
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-// import Permissions from 'react-native-permissions'
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';
-import PermissionDialog from '../../components/Dialog';
+import Button from '../../components/Button';
 import strings from "../../config/localization";
+import styles from '../../config/styles';
+
 
 class ScannerScene extends Component {
   constructor(props) {
@@ -22,29 +23,48 @@ class ScannerScene extends Component {
   componentWillMount(){
     Permissions.check('camera')
       .then(per => {
-        console.warn('per',per)
-        if(per === 'denied') this.setState({cameraPermission:false})
+        if(per === 'denied' || per ===  'undetermined' || per ===  'restricted') this.setState({cameraPermission:false})
       });
   }
+
+  handlePermissionButton(){
+    Permissions.request('camera').then(per => {
+      if(per === 'authorized') this.setState({cameraPermission:true})
+    });
+  }
+
+  barcodeRecognized = ({ barcodes }) => {
+    console.warn(barcodes)
+    // barcodes.forEach(barcode => console.warn(barcode.data))
+  };
 
   render() {
     const {cameraPermission} = this.state;
     return (
-      <Scene title={strings.scanner} index={1} style={{flex:1}}>
+      <Scene title={strings.scanner} index={1}>
         <RNCamera
           ref={ref => {this.camera = ref;}}
-          style={{ flex: 1, width: '100%' }}
+          style={{ flex: 1 }}
+          onGoogleVisionBarcodesDetected={this.barcodeRecognized}
         />
-        <PermissionDialog 
-          visible={!cameraPermission}
-          onRequestClose={() => this.setState({ cameraPermission:true })}
-          title={strings.appPermissions}
-        >
-          <Text>{strings.wouldLikeToUse}</Text>
-        </PermissionDialog>
+        {!cameraPermission && <PermissionDialog onPermissionButtonPress={() => this.handlePermissionButton()} />}
       </Scene>
     );
   }
 }
 
 export default connect(() => ({ }) , { })(ScannerScene);
+
+export const PermissionDialog = (props) => {
+  const { onPermissionButtonPress }= props;
+  return (
+    <View style={styles.scanner.permissionDialog}>
+      <Text style={styles.scanner.permissionTitle}>{strings.appPermissions}</Text>
+      <Text style={styles.scanner.permissionDescription}>{strings.wouldLikeToUse}</Text>
+      <Button onPress={onPermissionButtonPress} title={strings.allow}  />
+    </View>
+  )
+};
+PermissionDialog.propTypes = {
+  onPermissionButtonPress: PropTypes.func.isRequired
+};

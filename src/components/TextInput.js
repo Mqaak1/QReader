@@ -31,6 +31,6 @@ Input.defaultProps = {
     info:'',
     icon:null,
     required:false,
-    inputColor:colors.gray_20,
+    inputColor:colors.dark,
 }
 export default Input

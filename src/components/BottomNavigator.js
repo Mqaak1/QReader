@@ -10,8 +10,8 @@ import strings from "../config/localization";
 
 const getColor = (currIndex, index) => {
   // А нехай йому грець, ви подивіться на цей пиздець
-  let color = colors.gray_100;
-  if(currIndex === index) color = colors.orange;
+  let color = colors.grey;
+  if(currIndex === index) color = colors.white;
   return color;
 };
 

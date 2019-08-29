@@ -22,8 +22,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
   style: {},
-  titleColor: colors.black,
-  buttonColor: 'rgba(255,255,255,0)'
+  titleColor: colors.white,
+  buttonColor: colors.green
 };
 
 export default Button;
