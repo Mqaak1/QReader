@@ -23,6 +23,7 @@ export const colors = {
   gray_20:'#e5e9ed',
   gray_10:'#f2f3f5',
   gray_5:'#f8f9fa',
+  translucent:'rgba(0,0,0,0.5)'
 };
 
 export const common = StyleSheet.create({
@@ -88,8 +89,19 @@ export const common = StyleSheet.create({
   },
   dialogRootContainer: {
     flex: 1,
-    backgroundColor: '#000000AA',
+    backgroundColor: colors.translucent,
     justifyContent: 'center'
+  },
+  dialogBodyContainer:{
+    marginHorizontal: 25,
+    backgroundColor: colors.white,
+    padding:15,
+    borderRadius:5
+  },
+  dialogTitle:{
+    color: colors.black, 
+    fontSize: 16,
+    textAlign:'center'
   }
 });
 
