@@ -5,6 +5,7 @@ import Permissions from 'react-native-permissions'
 // import PropTypes from 'prop-types';
 // import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
+// import Permissions from 'react-native-permissions'
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';
 import PermissionDialog from '../../components/Dialog';
@@ -18,12 +19,13 @@ class ScannerScene extends Component {
     }
   }
 
-  // componentWillMount(){
-  //   Permissions.check('camera')
-  //     .then(per => {
-  //       if(per === 'denied') this.setState({cameraPermission:false})
-  //     });
-  // }
+  componentWillMount(){
+    Permissions.check('camera')
+      .then(per => {
+        console.warn('per',per)
+        if(per === 'denied') this.setState({cameraPermission:false})
+      });
+  }
 
   render() {
     const {cameraPermission} = this.state;
