@@ -5,7 +5,6 @@ import Permissions from 'react-native-permissions'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
-// import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';

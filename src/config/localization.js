@@ -13,7 +13,8 @@ const strings = new LocalizedStrings({
     wouldLikeToUse:'QReader would like to use your camera',
     allow:'Allow',
     scannedCode:'Scanned code',
-    copiedTo:'Copied to Clipboard'
+    copiedTo:'Copied to Clipboard',
+    share:'Share'
   },
   ua:{
     //Bottom navigation
@@ -27,7 +28,8 @@ const strings = new LocalizedStrings({
     wouldLikeToUse:'QReader - потребує дозволу на використання камери',
     allow:'Надати',
     scannedCode:'Відсканований код',
-    copiedTo:'Скопійовано у буферу обміну'
+    copiedTo:'Скопійовано у буферу обміну',
+    share:'Поділитися'
   },
   de: {
     //Bottom navigation
@@ -41,7 +43,8 @@ const strings = new LocalizedStrings({
     wouldLikeToUse:'QReader möchte Ihre Kamera benutzen',
     allow:'Ermöglichen',
     scannedCode:'Gescannter Code',
-    copiedTo:'In die Zwischenablage kopiert'
+    copiedTo:'In die Zwischenablage kopiert',
+    share:'Aktie'
   }
 });
 
