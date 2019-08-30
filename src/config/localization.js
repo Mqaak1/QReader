@@ -11,7 +11,9 @@ const strings = new LocalizedStrings({
     //Scanner
     appPermissions:'App Permissions',
     wouldLikeToUse:'QReader would like to use your camera',
-    allow:'Allow'
+    allow:'Allow',
+    scannedCode:'Scanned code',
+    copiedTo:'Copied to Clipboard'
   },
   ua:{
     //Bottom navigation
@@ -23,7 +25,9 @@ const strings = new LocalizedStrings({
     //Scanner
     appPermissions:'Дозволи програми',
     wouldLikeToUse:'QReader - потребує дозволу на використання камери',
-    allow:'Надати'
+    allow:'Надати',
+    scannedCode:'Відсканований код',
+    copiedTo:'Скопійовано у буферу обміну'
   },
   de: {
     //Bottom navigation
@@ -35,7 +39,9 @@ const strings = new LocalizedStrings({
     //Scanner
     appPermissions:'App-Berechtigungen',
     wouldLikeToUse:'QReader möchte Ihre Kamera benutzen',
-    allow:'Ermöglichen'
+    allow:'Ermöglichen',
+    scannedCode:'Gescannter Code',
+    copiedTo:'In die Zwischenablage kopiert'
   }
 });
 

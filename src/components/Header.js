@@ -1,25 +1,28 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Actions } from 'react-native-router-flux';
 import PropTypes from 'prop-types';
 import Text from './Text';
-import styles  from '../config/styles';
+import styles, { colors }  from '../config/styles';
 
 const Header = (props) => {
-    const {title} = props;
+    const {title, backButton} = props;
     return (
       <View style={styles.common.headerContainer}>
-        <View>
-          <Text style={styles.common.headerTitle}>{title}</Text>
-        </View>
+        {backButton && (
+        <TouchableOpacity style={styles.common.headerIconContainer} onPress={Actions.pop}>
+          <Icon name="arrow-left" size={25} color={colors.white} />
+        </TouchableOpacity>
+        )}
+        <Text style={styles.common.headerTitle}>{title}</Text>
       </View>
     );
   }
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  backButton: PropTypes.bool.isRequired
 };
 
-// Header.defaultProps = {
-//   backBtnFunc: null
-// };
 export default Header;

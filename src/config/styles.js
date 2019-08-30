@@ -36,10 +36,13 @@ export const common = StyleSheet.create({
     height: 45 + IOSpadding,
     paddingTop: IOSpadding,
     alignItems: 'center',
-    justifyContent: 'space-between',
     flexDirection: 'row',
     paddingHorizontal:15,
     backgroundColor: colors.dark
+  },
+  headerIconContainer:{
+    paddingRight:20,
+    paddingVertical:5
   },
   headerTitle:{
     fontSize:22,
@@ -97,7 +100,20 @@ export const common = StyleSheet.create({
     color: colors.black, 
     fontSize: 16,
     textAlign:'center'
-  }
+  },
+  toastsContainer: {
+    zIndex: 1, position: 'absolute',
+    top: 45 + IOSpadding, left: 0, right: 0,
+    elevation: 5
+  },
+  toastView: {
+    elevation: 4,
+    backgroundColor: colors.dark,
+    padding: 10, zIndex: 1,
+    marginHorizontal: 15,
+    marginVertical: 2,
+    borderRadius: 10
+  },
 });
 
 
@@ -122,6 +138,16 @@ export const scanner = StyleSheet.create({
     fontWeight:'bold',
     marginVertical:10
   },
+  flashlightContainer:{
+    position:'absolute',
+    alignSelf:'center',
+    paddingHorizontal:25,
+    paddingVertical:10,
+    borderWidth:1,
+    borderColor:colors.white,
+    borderRadius:10,
+    bottom:25
+  }
 });
 
 export default { common, scanner };
