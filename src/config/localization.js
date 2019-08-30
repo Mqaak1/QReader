@@ -14,7 +14,8 @@ const strings = new LocalizedStrings({
     allow:'Allow',
     scannedCode:'Scanned code',
     copiedTo:'Copied to Clipboard',
-    share:'Share'
+    share:'Share',
+    listen:'Listen'
   },
   ua:{
     //Bottom navigation
@@ -29,7 +30,8 @@ const strings = new LocalizedStrings({
     allow:'Надати',
     scannedCode:'Відсканований код',
     copiedTo:'Скопійовано у буферу обміну',
-    share:'Поділитися'
+    share:'Поділитися',
+    listen:'Прослухати'
   },
   de: {
     //Bottom navigation
@@ -44,7 +46,8 @@ const strings = new LocalizedStrings({
     allow:'Ermöglichen',
     scannedCode:'Gescannter Code',
     copiedTo:'In die Zwischenablage kopiert',
-    share:'Aktie'
+    share:'Aktie',
+    listen:'Hör zu'
   }
 });
 

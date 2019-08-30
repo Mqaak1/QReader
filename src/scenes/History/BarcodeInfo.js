@@ -4,7 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
 // import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import Share from 'react-native-share'
+import Share from 'react-native-share';
+import Tts from 'react-native-tts';
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
@@ -22,6 +23,12 @@ const share = (barcode) => {
     Share.open({message:barcode})
 }
 
+const listen = (barcode) => {
+  Tts.getInitStatus().then(() => {
+    Tts.speak(barcode, { id: 'com.apple.ttsbundle.Moira-compact', language: 'ua' });
+  });
+}
+
 const BarcodeInfo = (props) => {
     const {barcode} = props;
     return (
@@ -31,13 +38,12 @@ const BarcodeInfo = (props) => {
           <View style={{flexDirection:'row', justifyContent:'space-between', borderBottomWidth:1, borderColor:colors.dark, paddingBottom:10, alignItems:'center'}}>
             <Text numberOfLines={1} style={{fontSize:16, color:colors.white, width:'80%'}}>{barcode}</Text>
             <TouchableOpacity onPress={() => copyToClipboard(barcode)} style={{paddingLeft:15}}>
-              <Icon name='copy' style={[styles.common.navigatorItemIcon,{color:colors.dark}]} />
+              <Icon name='copy' style={[styles.common.navigatorItemIcon,{color:colors.white}]} />
             </TouchableOpacity>
           </View>
         </View>
-        <View>
-          <Button onPress={() => share(barcode)} title={strings.share} style={{margin:15}} />
-        </View>
+        <Button onPress={() => listen(barcode)} title={strings.listen} style={{margin:15}} />
+        <Button onPress={() => share(barcode)} title={strings.share} style={{margin:15}} buttonColor={colors.dark} />
       </Scene>
     );
 }
@@ -50,5 +56,5 @@ BarcodeInfo.propTypes = {
 
 
 BarcodeInfo.defaultProps = {
-    barcode: 'My name is!'
+    barcode: 'Мене звати'
 };
