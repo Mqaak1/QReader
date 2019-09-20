@@ -24,8 +24,9 @@ const share = (barcode) => {
 }
 
 const listen = (barcode) => {
+  Tts.setDefaultLanguage('uk-UA');
   Tts.getInitStatus().then(() => {
-    Tts.speak(barcode, { id: 'com.apple.ttsbundle.Moira-compact', language: 'ua' });
+    Tts.speak(barcode, { language: 'uk-UA' });
   });
 }
 
