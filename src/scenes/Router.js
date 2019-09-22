@@ -7,17 +7,17 @@ import Profile from "./Profile/Profile";
 const RouterComponent = () => (
   <Router>
     <Scene key="root" hideNavBar>
-      <Scene
-        key="BarcodeInfo"          
-        component={BarcodeInfo}
-      /> 
+    
       <Scene
         type={ActionConst.RESET}
         key="Scanner"          
         component={Scanner}
       />  
 
-
+      <Scene
+        key="BarcodeInfo"          
+        component={BarcodeInfo}
+      /> 
           
       <Scene
         type={ActionConst.RESET}

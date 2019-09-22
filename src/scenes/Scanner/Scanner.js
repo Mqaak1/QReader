@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Platform, TouchableOpacity } from 'react-native';
 import { RNCamera } from 'react-native-camera';
+import BarcodeMask from 'react-native-barcode-mask';
 import Permissions from 'react-native-permissions'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Actions } from 'react-native-router-flux';
@@ -29,7 +30,7 @@ class ScannerScene extends Component {
         if(per === 'denied' || per ===  'undetermined' || per ===  'restricted') this.setState({cameraPermission:false})
       });
   }
-
+    
   handlePermissionButton(){
     Permissions.request('camera').then(per => {
       if(per === 'authorized') this.setState({cameraPermission:true})
@@ -38,10 +39,9 @@ class ScannerScene extends Component {
 
   barcodeRecognized = ({ barcodes }) => {
     if(!this.recognized ){
-      this.recognized = true;
-      Actions.BarcodeInfo({barcode: barcodes})
+      this.recognized = true; 
+      if(barcodes[0]) Actions.BarcodeInfo({barcode: barcodes[0]})
     }
-    console.warn(barcodes);
   };
 
   render() {
@@ -54,7 +54,9 @@ class ScannerScene extends Component {
           onBarCodeRead={Platform.select({ ios: this.barcodeRecognized, android: null })}
           onGoogleVisionBarcodesDetected={Platform.select({ android: this.barcodeRecognized, ios: null })}
           flashMode={isFlashlightOn ? RNCamera.Constants.FlashMode.torch : RNCamera.Constants.FlashMode.off}
-        />
+        >
+          <BarcodeMask />
+        </RNCamera>
         <TouchableOpacity onPress={() => this.setState({isFlashlightOn:!isFlashlightOn})} style={styles.scanner.flashlightContainer}>
           <Icon name={`${isFlashlightOn ? 'flashlight-off' : 'flashlight'}`} style={[styles.common.navigatorItemIcon,{color:colors.white}]} />
         </TouchableOpacity>

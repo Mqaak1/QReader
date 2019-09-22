@@ -1,23 +1,30 @@
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
 // import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import Scene from '../../components/Scene';
-import Text from '../../components/Text';
+import Picker from '../../components/Picker';
 import strings from "../../config/localization";
+
+const lang = [{label: 'English', value: 'en', key: 'en'}, {label: 'Deutsch', value: 'de', key: 'de'}, {label: 'Українська', value: 'ua', key: 'ua'}];
 
 class ProfileScene extends Component {
   constructor(props) {
     super(props);
-    this.state = {  
+    this.state = {
+      language:strings.getLanguage()
     }
   }
 
+  onLanguageChange(language){
+    this.setState({language});
+    strings.setLanguage(language)
+  }
+
   render() {
+    const { language } = this.state;
     return (
-      <Scene title={strings.profile} index={4} style={{flex:1}}>
-        <ScrollView style={{flex:1, backgroundColor:'green'}} />
-        <Text styles={{fontSize:16}}>New Application</Text>
+      <Scene title={strings.settings} index={4}>
+        <Picker value={language} items={lang} title={strings.language} onValueChange={(language) => this.onLanguageChange(language)} />
       </Scene>
     );
   }

@@ -25,7 +25,7 @@ Scene.propTypes = {
   navigator: PropTypes.bool,
   header: PropTypes.bool,
   title: PropTypes.string,
-  backButton: PropTypes.bool,
+  backButton: PropTypes.func,
   index: PropTypes.number
 };
 
@@ -34,7 +34,7 @@ Scene.defaultProps = {
   navigator: true,
   header: true,
   title:null,
-  backButton:false,
+  backButton:null,
   index:0
 };
 

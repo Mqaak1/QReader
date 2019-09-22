@@ -30,6 +30,7 @@
         "react/jsx-filename-extension": ["off"],
         "react-native/no-inline-styles": ["off"],
         "react-native/no-color-literals": ["off"],
-        "import/no-named-as-default-member": ["off"]
+        "import/no-named-as-default-member": ["off"],
+        "no-invalid-this":["off"]
     }
 }

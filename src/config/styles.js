@@ -114,6 +114,16 @@ export const common = StyleSheet.create({
     marginVertical: 2,
     borderRadius: 10
   },
+  pickerContainer: {
+    backgroundColor:colors.dark,
+    padding:10,
+    margin:15,
+    borderRadius:15
+  },
+  pickerTitle:{
+    fontSize:16,
+    color:colors.white
+  }
 });
 
 
