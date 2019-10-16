@@ -17,6 +17,10 @@ const strings = new LocalizedStrings({
     share:'Share',
     listen:'Listen',
 
+    //History
+    noScannedBarcode:'No Scanned QR-codes',
+    pleaseScanThe:'Please scan the QR code to listen to information encrypted in the QR code.',
+
     //settings
     language:'Language'
   },
@@ -36,6 +40,10 @@ const strings = new LocalizedStrings({
     share:'Поділитися',
     listen:'Прослухати',
 
+    //History
+    noScannedBarcode:'Немає відсканованих QR-кодів',
+    pleaseScanThe:'Будь ласка, скануйте QR-код, щоб прослухати інформацію, зашифровану в QR-коді.',
+    
     //settings
     language:'Мова'
   },
@@ -55,6 +63,10 @@ const strings = new LocalizedStrings({
     share:'Aktie',
     listen:'Hör zu',
 
+    //History
+    noScannedBarcode:'Keine gescannten QR-Codes',
+    pleaseScanThe:'Bitte scannen Sie den QR-Code, um die im QR-Code verschlüsselten Informationen anzuhören.',
+    
     //settings
     language:'Sprache'
   }

@@ -160,4 +160,50 @@ export const scanner = StyleSheet.create({
   }
 });
 
-export default { common, scanner };
+export const history = StyleSheet.create({
+  barcodeInfoContainer:{
+    flex:1,
+    padding:15
+  },
+  barcodeInfoTitle:{
+    fontSize:16,
+    color:colors.white,
+    fontWeight:'bold'
+  },
+  barcodeTitleContainer:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    borderBottomWidth:1,
+    borderColor:colors.dark,
+    paddingBottom:10,
+    alignItems:'center'
+  },
+  barcodeInfoTitleText:{
+    fontSize:16,
+    color:colors.white,
+    width:'80%'
+  },
+  emptyListContainer:{
+    alignItems:'center',
+    padding:15
+  },
+  emptyListIcon:{
+    color:colors.white,
+    fontSize:44
+  },
+  emptyListTitle:{
+    fontSize:20,
+    color:colors.white,
+    fontWeight:'bold',
+    textAlign:'center',
+    marginVertical:5
+  },
+  emptyListDescription:{
+    fontSize:16,
+    color:colors.grey,
+    textAlign:'center',
+    fontWeight:'bold'
+  }
+});
+
+export default { common, scanner, history };

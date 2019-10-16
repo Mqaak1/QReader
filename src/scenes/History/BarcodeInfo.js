@@ -34,10 +34,10 @@ const BarcodeInfo = (props) => {
     const { rawData } = barcode;
     return (
       <Scene title={strings.scannedCode} index={1} navigator={false} backButton={()=>Actions.Scanner()}>
-        <View style={{flex:1, padding:15}}>
-          <Text style={{fontSize:16, color:colors.white, fontWeight:'bold'}}>text</Text>
-          <View style={{flexDirection:'row', justifyContent:'space-between', borderBottomWidth:1, borderColor:colors.dark, paddingBottom:10, alignItems:'center'}}>
-            <Text numberOfLines={1} style={{fontSize:16, color:colors.white, width:'80%'}}>{rawData}</Text>
+        <View style={styles.history.barcodeInfoContainer}>
+          <Text style={styles.history.barcodeInfoTitle}>text</Text>
+          <View style={styles.history.barcodeTitleContainer}>
+            <Text numberOfLines={1} style={styles.history.barcodeInfoTitleText}>{rawData}</Text>
             <TouchableOpacity onPress={() => copyToClipboard(rawData)} style={{paddingLeft:15}}>
               <Icon name='copy' style={[styles.common.navigatorItemIcon,{color:colors.white}]} />
             </TouchableOpacity>
