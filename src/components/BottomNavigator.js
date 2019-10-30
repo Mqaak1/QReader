@@ -22,7 +22,7 @@ const Navigator = (props) => {
     <View style={styles.common.navigationContainer}>
       <Button color={getColor(1, index)} onPress={Actions.Scanner} title={strings.scanner} icon='qrcode' />
       <Button color={getColor(2, index)} onPress={Actions.HistoryList} title={strings.history} icon='clock-o' />
-      <Button color={getColor(3, index)} onPress={Actions.TinderScene} title={strings.lookup} icon='plus' />
+      {/* <Button color={getColor(3, index)} onPress={Actions.TinderScene} title={strings.lookup} icon='plus' /> */}
       <Button color={getColor(4, index)} onPress={Actions.Profile} title={strings.settings} icon='gears' />
     </View>
   );

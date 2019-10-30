@@ -7,7 +7,7 @@ import Text from '../Text';
 const EmptyList = (props) => {
     const {barcode} = props;
     return (
-      <View style={{}}>
+      <View style={{flexDirection:'row'}}>
         <Image source={barcode.image} />
         <View>
           <Text style={{}}>{barcode.title}</Text>
