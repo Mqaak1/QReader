@@ -203,6 +203,14 @@ export const history = StyleSheet.create({
     color:colors.grey,
     textAlign:'center',
     fontWeight:'bold'
+  },
+  historyItemContainer:{
+    flexDirection:'row',
+    padding:15,
+    borderBottomColor:colors.grey,
+    borderBottomWidth:0.5,
+    alignItems:'center',
+    backgroundColor:colors.black
   }
 });
 

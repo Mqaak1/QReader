@@ -3,16 +3,16 @@ import { View, Platform, TouchableOpacity, AsyncStorage } from 'react-native';
 import { RNCamera } from 'react-native-camera';
 import BarcodeMask from 'react-native-barcode-mask';
 import Permissions from 'react-native-permissions'
-import RNFS from 'react-native-fs'
+import moment from 'moment';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Actions } from 'react-native-router-flux';
+import bcrypt from 'react-native-bcrypt';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 import strings from "../../config/localization";
-import {encrypt} from "../../config/crypt";
 import styles, {colors} from '../../config/styles';
 
 
@@ -43,32 +43,24 @@ class ScannerScene extends Component {
   barcodeRecognized = ({ barcodes }) => {
     if(!this.recognized ){
       this.recognized = true; 
-      if(barcodes[0]) {
-        console.warn(barcodes[0])
+      if(barcodes && barcodes[0]) {
         this.saveBarcode(barcodes[0])
-        // Actions.BarcodeInfo({barcode: barcodes[0]})
+        Actions.BarcodeInfo({barcode: barcodes[0]})
       }
     }
   };
 
   // eslint-disable-next-line class-methods-use-this
   async saveBarcode(barcode){
-    const id = encrypt(barcode.data, barcode.data);
-    console.warn('1')
+    const id = bcrypt.hashSync(barcode.data, 8);
     let barcodes = await AsyncStorage.getItem('barcodes');
     barcodes = JSON.parse(barcodes) || []
-    console.warn('2')
     const exist = barcodes.find(item => item.id === id);
     if(exist) return
-    barcodes.push({...barcode, id});
+    barcodes.push({...barcode, id, date:moment().format("D MMM YYYY, H:mm") });
     await AsyncStorage.setItem('barcodes', JSON.stringify(barcodes))
   }
-  saveQrToDisk() {
-    this.svg.toDataURL((data) => {
-      RNFS.writeFile(RNFS.CachesDirectoryPath+"/some-name.png", data, 'base64')
-        .then(success => console.warn('success', success))
-    })
- }
+  
   render() {
     const {cameraPermission, isFlashlightOn} = this.state;
     return (

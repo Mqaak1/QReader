@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, Platform } from 'react-native';
+import { View, StatusBar, Platform, YellowBox } from 'react-native';
 import PropTypes from 'prop-types';
 import styles, { colors } from '../config/styles'
 import Navigator from "./BottomNavigator";
@@ -7,6 +7,7 @@ import Header from "./Header";
 
 const Scene = (props) => {
     const { children, navigator, header, title, index, backButton } = props;
+    YellowBox.ignoreWarnings([ 'Warning: Async Storage has been' ]);
     if(Platform.OS === 'android') StatusBar.setBackgroundColor(colors.dark, true)
     return (
       <View style={styles.common.rootContainer}>

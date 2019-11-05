@@ -20,6 +20,7 @@ const strings = new LocalizedStrings({
     //History
     noScannedBarcode:'No Scanned QR-codes',
     pleaseScanThe:'Please scan the QR code to listen to information encrypted in the QR code.',
+    delete:"Delete",
 
     //settings
     language:'Language'
@@ -43,6 +44,7 @@ const strings = new LocalizedStrings({
     //History
     noScannedBarcode:'Немає відсканованих QR-кодів',
     pleaseScanThe:'Будь ласка, скануйте QR-код, щоб прослухати інформацію, зашифровану в QR-коді.',
+    delete:"Видалити",
     
     //settings
     language:'Мова'
@@ -66,6 +68,7 @@ const strings = new LocalizedStrings({
     //History
     noScannedBarcode:'Keine gescannten QR-Codes',
     pleaseScanThe:'Bitte scannen Sie den QR-Code, um die im QR-Code verschlüsselten Informationen anzuhören.',
+    delete:"Löschen",
     
     //settings
     language:'Sprache'

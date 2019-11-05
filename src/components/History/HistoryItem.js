@@ -1,28 +1,30 @@
 import React from 'react';
-import { View, Image } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
 import PropTypes from 'prop-types';
 import Text from '../Text';
-// import styles  from '../../config/styles';
+import styles, { colors } from '../../config/styles';
 
 const EmptyList = (props) => {
-    const {barcode} = props;
+    const {barcode, handleChooseItem} = props;
     return (
-      <View style={{flexDirection:'row'}}>
-        <Image source={barcode.image} />
-        <View>
-          <Text style={{}}>{barcode.title}</Text>
-          <Text style={{}}>{barcode.date}</Text>
+      <TouchableOpacity style={styles.history.historyItemContainer} onPress={handleChooseItem} activeOpacity={1}>
+        <QRCode value={barcode.rawData} size={50} />
+        <View style={{flex:1, paddingHorizontal:10}}>
+          <Text numberOfLines={2} style={styles.history.barcodeInfoTitle}>{barcode.rawData}</Text>
+          <Text numberOfLines={1} style={{fontSize:12, color:colors.grey}}>{barcode.date}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
 };
 
 EmptyList.propTypes = {
-    barcode: PropTypes.string
+  barcode: PropTypes.object,
+  handleChooseItem: PropTypes.func.isRequired
 };
 
 EmptyList.defaultProps = {
-    barcode: {},
+  barcode: {},
 };
 
 export default EmptyList;
