@@ -173,15 +173,12 @@ export const history = StyleSheet.create({
   barcodeTitleContainer:{
     flexDirection:'row',
     justifyContent:'space-between',
-    borderBottomWidth:1,
-    borderColor:colors.dark,
     paddingBottom:10,
     alignItems:'center'
   },
   barcodeInfoTitleText:{
     fontSize:16,
-    color:colors.white,
-    width:'80%'
+    color:colors.white
   },
   emptyListContainer:{
     alignItems:'center',

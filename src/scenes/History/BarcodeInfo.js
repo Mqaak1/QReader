@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Clipboard } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Clipboard } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
@@ -34,15 +34,15 @@ const BarcodeInfo = (props) => {
     const { rawData } = barcode;
     return (
       <Scene title={strings.scannedCode} index={1} navigator={false} backButton={()=>Actions.Scanner()}>
-        <View style={styles.history.barcodeInfoContainer}>
-          <Text style={styles.history.barcodeInfoTitle}>text</Text>
+        <ScrollView style={styles.history.barcodeInfoContainer}>
           <View style={styles.history.barcodeTitleContainer}>
-            <Text numberOfLines={1} style={styles.history.barcodeInfoTitleText}>{rawData}</Text>
+            <Text style={styles.history.barcodeInfoTitle}>{strings.text}</Text>
             <TouchableOpacity onPress={() => copyToClipboard(rawData)} style={{paddingLeft:15}}>
               <Icon name='copy' style={[styles.common.navigatorItemIcon,{color:colors.white}]} />
             </TouchableOpacity>
           </View>
-        </View>
+          <Text style={styles.history.barcodeInfoTitleText}>{rawData}</Text>
+        </ScrollView>
         <Button onPress={() => listen(rawData)} title={strings.listen} style={{margin:15}} />
         <Button onPress={() => share(rawData)} title={strings.share} style={{margin:15}} buttonColor={colors.dark} />
       </Scene>

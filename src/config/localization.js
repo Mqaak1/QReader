@@ -16,6 +16,7 @@ const strings = new LocalizedStrings({
     copiedTo:'Copied to Clipboard',
     share:'Share',
     listen:'Listen',
+    text:'Text',
 
     //History
     noScannedBarcode:'No Scanned QR-codes',
@@ -40,6 +41,7 @@ const strings = new LocalizedStrings({
     copiedTo:'Скопійовано у буферу обміну',
     share:'Поділитися',
     listen:'Прослухати',
+    text:'Текст',
 
     //History
     noScannedBarcode:'Немає відсканованих QR-кодів',
@@ -64,6 +66,7 @@ const strings = new LocalizedStrings({
     copiedTo:'In die Zwischenablage kopiert',
     share:'Aktie',
     listen:'Hör zu',
+    text:'Text',
 
     //History
     noScannedBarcode:'Keine gescannten QR-Codes',
