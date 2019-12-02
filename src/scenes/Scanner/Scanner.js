@@ -6,13 +6,14 @@ import Permissions from 'react-native-permissions'
 import moment from 'moment';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Actions } from 'react-native-router-flux';
-import bcrypt from 'react-native-bcrypt';
+// import bcrypt from 'react-native-bcrypt';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
 import strings from "../../config/localization";
+import {getHash} from "../../config/helpers";
 import styles, {colors} from '../../config/styles';
 
 
@@ -52,7 +53,8 @@ class ScannerScene extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   async saveBarcode(barcode){
-    const id = bcrypt.hashSync(barcode.data, 8);
+    // const id = bcrypt.hashSync(barcode.data, 8);
+    const id = getHash(barcode.rawData)
     let barcodes = await AsyncStorage.getItem('barcodes');
     barcodes = JSON.parse(barcodes) || []
     const exist = barcodes.find(item => item.id === id);

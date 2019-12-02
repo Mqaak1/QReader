@@ -29,8 +29,7 @@ export const common = StyleSheet.create({
   preloaderContainer:{
     flex:1,
     alignItems:'center',
-    justifyContent:'center',
-    backgroundColor:colors.dark
+    justifyContent:'center'
   },
   headerContainer:{
     height: 45 + IOSpadding,
