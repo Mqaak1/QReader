@@ -116,7 +116,8 @@ export const common = StyleSheet.create({
   pickerContainer: {
     backgroundColor:colors.dark,
     padding:10,
-    margin:15,
+    marginHorizontal:15,
+    marginTop:15,
     borderRadius:15
   },
   pickerTitle:{
@@ -177,7 +178,8 @@ export const history = StyleSheet.create({
   },
   barcodeInfoTitleText:{
     fontSize:16,
-    color:colors.white
+    color:colors.white,
+    marginBottom:15
   },
   emptyListContainer:{
     alignItems:'center',

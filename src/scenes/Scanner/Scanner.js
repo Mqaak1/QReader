@@ -8,7 +8,6 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Actions } from 'react-native-router-flux';
 // import bcrypt from 'react-native-bcrypt';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import Scene from '../../components/Scene';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
@@ -85,7 +84,7 @@ class ScannerScene extends Component {
   }
 }
 
-export default connect(() => ({ }) , { })(ScannerScene);
+export default ScannerScene;
 
 export const PermissionDialog = (props) => {
   const { onPermissionButtonPress }= props;

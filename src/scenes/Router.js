@@ -1,5 +1,6 @@
 import React from 'react';
 import { Router, Scene, ActionConst } from "react-native-router-flux";
+import PreLoader from "./PreLoader/PreLoader";
 import Scanner from "./Scanner/Scanner";
 import BarcodeInfo from "./History/BarcodeInfo";
 import HistoryList from "./History/HistoryList";
@@ -8,6 +9,12 @@ import Profile from "./Profile/Profile";
 const RouterComponent = () => (
   <Router>
     <Scene key="root" hideNavBar>
+
+      <Scene
+        type={ActionConst.RESET}
+        key="PreLoader"          
+        component={PreLoader}
+      />
     
       <Scene
         type={ActionConst.RESET}

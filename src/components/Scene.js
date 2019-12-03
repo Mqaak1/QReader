@@ -12,7 +12,7 @@ const Scene = (props) => {
     if(Platform.OS === 'android') StatusBar.setBackgroundColor(colors.dark, true)
     return (
       <View style={styles.common.rootContainer}>
-        <StatusBar backgroundColor='red' barStyle='light-content' />
+        <StatusBar backgroundColor={colors.dark} barStyle='light-content' />
         {header && <Header title={title} backButton={backButton} />}
         <Loader visible={loading} />
         <View style={{flex:1, backgroundColor:colors.black}} {...props}>

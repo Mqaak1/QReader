@@ -16,6 +16,9 @@ const strings = new LocalizedStrings({
     copiedTo:'Copied to Clipboard',
     share:'Share',
     listen:'Listen',
+    stop:'Stop',
+    openInBrowser:'Open in browser',
+    urlNotOpen:'Url is not valid.',
     text:'Text',
 
     //History
@@ -24,7 +27,8 @@ const strings = new LocalizedStrings({
     delete:"Delete",
 
     //settings
-    language:'Language'
+    language:'Language',
+    speechRate:'Speech Rate'
   },
   ua:{
     //Bottom navigation
@@ -41,6 +45,9 @@ const strings = new LocalizedStrings({
     copiedTo:'Скопійовано у буферу обміну',
     share:'Поділитися',
     listen:'Прослухати',
+    stop:'Зупинити',
+    openInBrowser:'Перейти за посиланням',
+    urlNotOpen:'URL-адреса недійсна.',
     text:'Текст',
 
     //History
@@ -49,7 +56,8 @@ const strings = new LocalizedStrings({
     delete:"Видалити",
     
     //settings
-    language:'Мова'
+    language:'Мова',
+    speechRate:'Швидкість озвучення'
   },
   de: {
     //Bottom navigation
@@ -66,6 +74,9 @@ const strings = new LocalizedStrings({
     copiedTo:'In die Zwischenablage kopiert',
     share:'Aktie',
     listen:'Hör zu',
+    stop:'Stop',
+    openInBrowser:'Im Browser öffnen',
+    urlNotOpen:'Der URL ist nicht korrekt.',
     text:'Text',
 
     //History
@@ -74,7 +85,8 @@ const strings = new LocalizedStrings({
     delete:"Löschen",
     
     //settings
-    language:'Sprache'
+    language:'Sprache',
+    speechRate:'Sprachrate'
   }
 });
 
