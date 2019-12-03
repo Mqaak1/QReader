@@ -11,7 +11,7 @@ export const getHash = (input) => {
 export const language = [{label: 'English', value: 'en', key: 'en'}, {label: 'Deutsch', value: 'de', key: 'de'}, {label: 'Українська', value: 'ua', key: 'ua'}];
 
 export const chooseLanguage = (lang) => {
-  let language = 'en-US';
+  let language = 'uk-UA';
   switch (lang) {      
     case 'en': language = 'en-US';
     break;

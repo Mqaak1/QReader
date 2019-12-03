@@ -1,4 +1,4 @@
-package com.qreader;
+package com.qrspeaker;
 
 import android.app.Application;
 
